@@ -1,0 +1,5 @@
+{
+  "task_id": "HumanEval/16",
+  "entry_point": "count_distinct_characters",
+  "problem_number": 4
+}

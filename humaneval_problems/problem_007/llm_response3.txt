@@ -1,0 +1,38 @@
+```python
+def change_base(x: int, base: int):
+    """Change numerical base of input number x to base.
+    return string representation after the conversion.
+    base numbers are less than 10.
+    >>> change_base(8, 3)
+    '22'
+    >>> change_base(8, 2)
+    '1000'
+    >>> change_base(7, 2)
+    '111'
+    """
+    if x == 0:
+        return '0'
+    
+    if base < 2 or base > 9:
+        # Assuming valid bases based on the problem description ("base numbers are less than 10")
+        # and the nature of base conversion (base >= 2).
+        # This branch might be simplified or removed if we strictly rely on the docstring
+        # constraints, but it's good practice for a general base converter.
+        # For this specific problem, we'll assume valid inputs based on the prompt.
+        pass
+
+    result = ''
+    n = abs(x) # Work with absolute value for conversion
+    
+    while n > 0:
+        remainder = n % base
+        result = str(remainder) + result
+        n //= base
+    
+    # The problem implies non-negative x based on examples and typical base conversion context
+    # If negative numbers were allowed, we would prepend a '-' here if x < 0.
+    # Since the prompt implies non-negative x, we just return the result.
+    
+    return result
+
+```

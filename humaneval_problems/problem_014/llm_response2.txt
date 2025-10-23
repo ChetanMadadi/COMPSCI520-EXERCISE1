@@ -1,0 +1,10 @@
+```python
+def sort_third(l: list):
+    result = l.copy()
+    indices_divisible_by_three = [i for i in range(len(l)) if i % 3 == 0]
+    values_at_indices = [l[i] for i in indices_divisible_by_three]
+    values_at_indices.sort()
+    for idx, sorted_value in zip(indices_divisible_by_three, values_at_indices):
+        result[idx] = sorted_value
+    return result
+```

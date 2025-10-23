@@ -1,0 +1,15 @@
+```python
+def cycpattern_check(a, b):
+    if len(b) > len(a):
+        return False
+    if b == "":
+        return True
+    rotations = []
+    for i in range(len(b)):
+        rotation = b[i:] + b[:i]
+        rotations.append(rotation)
+    for r in rotations:
+        if r in a:
+            return True
+    return False
+```

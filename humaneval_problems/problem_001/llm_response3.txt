@@ -1,0 +1,6 @@
+def incr_list(l: list):
+    """Return list with elements incremented by 1."""
+    result = []
+    for item in l:
+        result.append(item + 1)
+    return result

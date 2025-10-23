@@ -1,0 +1,19 @@
+```python
+def count_nums(arr):
+    count = 0
+    for num in arr:
+        if num == 0:
+            continue
+        s = str(num)
+        total = 0
+        if s[0] == '-':
+            total = -int(s[1])
+            for digit in s[2:]:
+                total += int(digit)
+        else:
+            for digit in s:
+                total += int(digit)
+        if total > 0:
+            count += 1
+    return count
+```
