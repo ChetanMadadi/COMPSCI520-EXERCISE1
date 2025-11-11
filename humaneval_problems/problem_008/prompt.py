@@ -1,21 +1,19 @@
 """
-Task ID: HumanEval/119
-Entry Point: match_parens
+Task ID: HumanEval/134
+Entry Point: check_if_last_char_is_a_letter
 """
 
 
-def match_parens(lst):
+def check_if_last_char_is_a_letter(txt):
     '''
-    You are given a list of two strings, both strings consist of open
-    parentheses '(' or close parentheses ')' only.
-    Your job is to check if it is possible to concatenate the two strings in
-    some order, that the resulting string will be good.
-    A string S is considered to be good if and only if all parentheses in S
-    are balanced. For example: the string '(())()' is good, while the string
-    '())' is not.
-    Return 'Yes' if there's a way to make a good string, and return 'No' otherwise.
+    Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    Note: "word" is a group of characters separated by space.
 
     Examples:
-    match_parens(['()(', ')']) == 'Yes'
-    match_parens([')', ')']) == 'No'
+    check_if_last_char_is_a_letter("apple pie") ➞ False
+    check_if_last_char_is_a_letter("apple pi e") ➞ True
+    check_if_last_char_is_a_letter("apple pi e ") ➞ False
+    check_if_last_char_is_a_letter("") ➞ False 
     '''

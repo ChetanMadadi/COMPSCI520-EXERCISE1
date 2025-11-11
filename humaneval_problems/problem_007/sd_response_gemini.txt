@@ -1,0 +1,14 @@
+def match_parens(lst):
+    """Check if concatenating two strings can form balanced parentheses."""
+    def valid(s):
+        level = 0
+        for p in s:
+            level = level + 1 if p == '(' else level - 1
+            if level < 0:
+                return False
+        return level == 0
+    
+    for order in [lst, lst[::-1]]:
+        if valid(''.join(order)):
+            return 'Yes'
+    return 'No'

@@ -1,0 +1,11 @@
+def change_base(x: int, base: int):
+    """Change numerical base of input number x to base."""
+    if x == 0:
+        return '0'
+    
+    result = []
+    while x > 0:
+        result.insert(0, str(x % base))
+        x //= base
+    
+    return ''.join(result)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test runner for problem_009 using llm_response2
+Test runner for problem_010 using llm_response2
 """
 import sys
 import traceback
@@ -51,7 +51,7 @@ def clean_llm_response(code):
     return code
 
 def run_tests():
-    """Run tests for problem_009 using llm_response2"""
+    """Run tests for problem_010 using llm_response2"""
     try:
         # Load and execute the LLM response from text file (same directory)
         llm_response_path = Path("llm_response2.txt")
@@ -86,14 +86,14 @@ def run_tests():
         # Run the check function with the entry point function
         try:
             # Get the functions from the shared namespace
-            if 'check_if_last_char_is_a_letter' in namespace and 'check' in namespace:
-                namespace['check'](namespace['check_if_last_char_is_a_letter'])
+            if 'correct_bracketing' in namespace and 'check' in namespace:
+                namespace['check'](namespace['correct_bracketing'])
                 print("✅ All tests passed!")
                 return True, []
             else:
                 missing = []
-                if 'check_if_last_char_is_a_letter' not in namespace:
-                    missing.append("Function 'check_if_last_char_is_a_letter'")
+                if 'correct_bracketing' not in namespace:
+                    missing.append("Function 'correct_bracketing'")
                 if 'check' not in namespace:
                     missing.append("Function 'check'")
                 error_msg = f"{', '.join(missing)} not found"

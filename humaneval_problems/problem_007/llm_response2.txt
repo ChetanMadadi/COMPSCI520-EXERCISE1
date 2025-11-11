@@ -1,30 +1,27 @@
 ```python
-def change_base(x: int, base: int):
-    """Change numerical base of input number x to base.
-    return string representation after the conversion.
-    base numbers are less than 10.
-    >>> change_base(8, 3)
-    '22'
-    >>> change_base(8, 2)
-    '1000'
-    >>> change_base(7, 2)
-    '111'
-    """
-    if x == 0:
-        return '0'
-    
-    if base < 2 or base > 9:
-        # Based on the problem description "base numbers are less than 10" and 
-        # the nature of base conversion, we assume 2 <= base <= 9.
-        # This part is defensive programming, though the constraints suggest it's not strictly necessary.
-        raise ValueError("Base must be between 2 and 9 inclusive.")
+def match_parens(lst):
+    def get_properties(s):
+        balance = 0
+        min_balance = 0
+        for char in s:
+            if char == '(':
+                balance += 1
+            else:
+                balance -= 1
+            if balance < min_balance:
+                min_balance = balance
+        return min_balance, balance
 
-    result = ''
-    n = x
-    while n > 0:
-        remainder = n % base
-        result = str(remainder) + result
-        n //= base
-        
-    return result
+    s1, s2 = lst[0], lst[1]
+    
+    min1, final1 = get_properties(s1)
+    min2, final2 = get_properties(s2)
+    
+    if min1 >= 0 and final1 + min2 >= 0 and final1 + final2 == 0:
+        return 'Yes'
+    
+    if min2 >= 0 and final2 + min1 >= 0 and final1 + final2 == 0:
+        return 'Yes'
+    
+    return 'No'
 ```

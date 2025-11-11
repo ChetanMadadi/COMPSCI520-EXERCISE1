@@ -1,0 +1,6 @@
+def correct_bracketing(brackets: str):
+    """Check if every opening bracket has a corresponding closing bracket."""
+    count = 0
+    for bracket in brackets:
+        count += 1 if bracket == '(' else -1
+    return count == 0

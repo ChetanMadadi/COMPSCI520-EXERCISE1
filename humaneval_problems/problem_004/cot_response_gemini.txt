@@ -1,0 +1,3 @@
+def count_distinct_characters(string: str) -> int:
+    """Count distinct characters regardless of case."""
+    return len(set(string.lower()))

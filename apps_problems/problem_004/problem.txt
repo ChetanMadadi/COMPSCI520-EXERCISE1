@@ -1,0 +1,25 @@
+Problem: Coin Change
+
+You are given an integer array coins representing different denominations and an integer amount.
+Return the minimum number of coins needed to make up that amount.
+If that amount cannot be made up by any combination of the coins, return -1.
+You may assume you have an infinite number of each kind of coin.
+
+Input Format:
+First line: integer n (1 ≤ n ≤ 12) - number of coin denominations
+Second line: n space-separated integers (1 ≤ coins[i] ≤ 100)
+Third line: integer amount (0 ≤ amount ≤ 10^4)
+
+Output Format:
+An integer representing the minimum number of coins, or -1 if impossible
+
+Example:
+Input:
+3
+1 2 5
+11
+
+Output:
+3
+
+Explanation: 11 = 5 + 5 + 1 (3 coins)

@@ -1,15 +1,18 @@
 """
-Task ID: HumanEval/65
-Entry Point: circular_shift
+Task ID: HumanEval/44
+Entry Point: change_base
 """
 
 
-def circular_shift(x, shift):
-    """Circular shift the digits of the integer x, shift the digits right by shift
-    and return the result as a string.
-    If shift > number of digits, return digits reversed.
-    >>> circular_shift(12, 1)
-    "21"
-    >>> circular_shift(12, 2)
-    "12"
+
+def change_base(x: int, base: int):
+    """Change numerical base of input number x to base.
+    return string representation after the conversion.
+    base numbers are less than 10.
+    >>> change_base(8, 3)
+    '22'
+    >>> change_base(8, 2)
+    '1000'
+    >>> change_base(7, 2)
+    '111'
     """

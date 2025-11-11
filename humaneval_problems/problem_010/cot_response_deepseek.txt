@@ -1,0 +1,10 @@
+def sort_third(l: list):
+    """Sort values at indices divisible by three."""
+    result = list(l)
+    indices = [i for i in range(len(l)) if i % 3 == 0]
+    values = sorted([l[i] for i in indices])
+    
+    for i, idx in enumerate(indices):
+        result[idx] = values[i]
+    
+    return result

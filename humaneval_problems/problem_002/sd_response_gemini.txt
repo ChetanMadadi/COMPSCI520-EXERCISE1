@@ -1,0 +1,6 @@
+def find_closest_elements(numbers):
+    """Find two closest elements and return them in order."""
+    s = sorted(numbers)
+    min_pair = min(((s[i], s[i+1]) for i in range(len(s)-1)), 
+                   key=lambda p: p[1] - p[0])
+    return min_pair

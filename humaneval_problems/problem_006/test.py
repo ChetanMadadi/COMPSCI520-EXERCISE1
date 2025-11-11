@@ -1,15 +1,19 @@
 """
-Tests for HumanEval/65
+Tests for HumanEval/44
 """
 
+
+
+METADATA = {}
+
+
 def check(candidate):
-
-    # Check some simple cases
-    assert candidate(100, 2) == "001"
-    assert candidate(12, 2) == "12"
-    assert candidate(97, 8) == "79"
-    assert candidate(12, 1) == "21", "This prints if this assert fails 1 (good for debugging!)"
-
-    # Check some edge cases that are easy to work out by hand.
-    assert candidate(11, 101) == "11", "This prints if this assert fails 2 (also good for debugging!)"
+    assert candidate(8, 3) == "22"
+    assert candidate(9, 3) == "100"
+    assert candidate(234, 2) == "11101010"
+    assert candidate(16, 2) == "10000"
+    assert candidate(8, 2) == "1000"
+    assert candidate(7, 2) == "111"
+    for x in range(2, 8):
+        assert candidate(x, x + 1) == str(x)
 

@@ -1,0 +1,24 @@
+Problem: Shortest Path in Binary Matrix
+
+Given an n x n binary matrix, find the length of the shortest path from top-left (0,0) to bottom-right (n-1,n-1).
+You can only move through cells with value 0, and you can move in 8 directions (including diagonals).
+If no path exists, return -1.
+
+Input Format:
+First line: integer n (1 ≤ n ≤ 100)
+Next n lines: n space-separated integers (0 or 1)
+
+Output Format:
+An integer representing the shortest path length, or -1 if no path exists
+
+Example:
+Input:
+3
+0 1 0
+0 0 0
+1 0 0
+
+Output:
+4
+
+Explanation: Path is (0,0) → (1,0) → (1,1) → (1,2) → (2,2)

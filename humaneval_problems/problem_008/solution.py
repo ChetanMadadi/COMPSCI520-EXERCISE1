@@ -1,34 +1,21 @@
 """
-Reference Solution for HumanEval/119
+Reference Solution for HumanEval/134
 """
 
 
-def match_parens(lst):
+def check_if_last_char_is_a_letter(txt):
     '''
-    You are given a list of two strings, both strings consist of open
-    parentheses '(' or close parentheses ')' only.
-    Your job is to check if it is possible to concatenate the two strings in
-    some order, that the resulting string will be good.
-    A string S is considered to be good if and only if all parentheses in S
-    are balanced. For example: the string '(())()' is good, while the string
-    '())' is not.
-    Return 'Yes' if there's a way to make a good string, and return 'No' otherwise.
+    Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    Note: "word" is a group of characters separated by space.
 
     Examples:
-    match_parens(['()(', ')']) == 'Yes'
-    match_parens([')', ')']) == 'No'
+    check_if_last_char_is_a_letter("apple pie") ➞ False
+    check_if_last_char_is_a_letter("apple pi e") ➞ True
+    check_if_last_char_is_a_letter("apple pi e ") ➞ False
+    check_if_last_char_is_a_letter("") ➞ False 
     '''
-    def check(s):
-        val = 0
-        for i in s:
-            if i == '(':
-                val = val + 1
-            else:
-                val = val - 1
-            if val < 0:
-                return False
-        return True if val == 0 else False
-
-    S1 = lst[0] + lst[1]
-    S2 = lst[1] + lst[0]
-    return 'Yes' if check(S1) or check(S2) else 'No'
+ 
+    check = txt.split(' ')[-1]
+    return True if len(check) == 1 and (97 <= ord(check.lower()) <= 122) else False

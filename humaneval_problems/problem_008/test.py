@@ -1,23 +1,21 @@
 """
-Tests for HumanEval/119
+Tests for HumanEval/134
 """
 
 def check(candidate):
 
     # Check some simple cases
-    assert candidate(['()(', ')']) == 'Yes'
-    assert candidate([')', ')']) == 'No'
-    assert candidate(['(()(())', '())())']) == 'No'
-    assert candidate([')())', '(()()(']) == 'Yes'
-    assert candidate(['(())))', '(()())((']) == 'Yes'
-    assert candidate(['()', '())']) == 'No'
-    assert candidate(['(()(', '()))()']) == 'Yes'
-    assert candidate(['((((', '((())']) == 'No'
-    assert candidate([')(()', '(()(']) == 'No'
-    assert candidate([')(', ')(']) == 'No'
-    
+    assert candidate("apple") == False
+    assert candidate("apple pi e") == True
+    assert candidate("eeeee") == False
+    assert candidate("A") == True
+    assert candidate("Pumpkin pie ") == False
+    assert candidate("Pumpkin pie 1") == False
+    assert candidate("") == False
+    assert candidate("eeeee e ") == False
+    assert candidate("apple pie") == False
+    assert candidate("apple pi e ") == False
 
     # Check some edge cases that are easy to work out by hand.
-    assert candidate(['(', ')']) == 'Yes'
-    assert candidate([')', '(']) == 'Yes' 
+    assert True
 

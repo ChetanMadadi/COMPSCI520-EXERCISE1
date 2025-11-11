@@ -1,0 +1,19 @@
+Problem: Longest Palindromic Substring
+
+Given a string, find the length of the longest palindromic substring.
+A palindrome is a string that reads the same forwards and backwards.
+
+Input Format:
+A single line containing a string (1 ≤ length ≤ 1000)
+
+Output Format:
+An integer representing the length of the longest palindromic substring
+
+Example:
+Input:
+babad
+
+Output:
+3
+
+Explanation: "bab" or "aba" are both palindromes of length 3

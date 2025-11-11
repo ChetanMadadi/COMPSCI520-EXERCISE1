@@ -1,3 +1,27 @@
-def incr_list(l: list):
-    """Return list with elements incremented by 1."""
-    return [x + 1 for x in l]
+```python
+def change_base(x: int, base: int):
+    if x == 0:
+        return '0'
+    
+    if not (2 <= base <= 9):
+        # Based on the problem description "base numbers are less than 10", 
+        # we assume base is between 2 and 9 inclusive. 
+        # For a standard implementation, this case should ideally raise an error 
+        # or be handled specifically, but for this problem, we stick to the described range.
+        # If the input base is outside this range, the result might be unexpected 
+        # based on the limited scope described. Assuming valid inputs per the docstring.
+        pass
+
+    result = ''
+    n = abs(x)
+    
+    while n > 0:
+        remainder = n % base
+        result = str(remainder) + result
+        n //= base
+    
+    if x < 0:
+        return '-' + result
+    
+    return result
+```

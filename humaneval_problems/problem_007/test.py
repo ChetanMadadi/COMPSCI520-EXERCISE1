@@ -1,19 +1,23 @@
 """
-Tests for HumanEval/44
+Tests for HumanEval/119
 """
 
-
-
-METADATA = {}
-
-
 def check(candidate):
-    assert candidate(8, 3) == "22"
-    assert candidate(9, 3) == "100"
-    assert candidate(234, 2) == "11101010"
-    assert candidate(16, 2) == "10000"
-    assert candidate(8, 2) == "1000"
-    assert candidate(7, 2) == "111"
-    for x in range(2, 8):
-        assert candidate(x, x + 1) == str(x)
+
+    # Check some simple cases
+    assert candidate(['()(', ')']) == 'Yes'
+    assert candidate([')', ')']) == 'No'
+    assert candidate(['(()(())', '())())']) == 'No'
+    assert candidate([')())', '(()()(']) == 'Yes'
+    assert candidate(['(())))', '(()())((']) == 'Yes'
+    assert candidate(['()', '())']) == 'No'
+    assert candidate(['(()(', '()))()']) == 'Yes'
+    assert candidate(['((((', '((())']) == 'No'
+    assert candidate([')(()', '(()(']) == 'No'
+    assert candidate([')(', ')(']) == 'No'
+    
+
+    # Check some edge cases that are easy to work out by hand.
+    assert candidate(['(', ')']) == 'Yes'
+    assert candidate([')', '(']) == 'Yes' 
 

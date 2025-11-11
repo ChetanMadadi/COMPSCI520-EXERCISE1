@@ -1,18 +1,21 @@
 """
-Task ID: HumanEval/44
-Entry Point: change_base
+Task ID: HumanEval/119
+Entry Point: match_parens
 """
 
 
+def match_parens(lst):
+    '''
+    You are given a list of two strings, both strings consist of open
+    parentheses '(' or close parentheses ')' only.
+    Your job is to check if it is possible to concatenate the two strings in
+    some order, that the resulting string will be good.
+    A string S is considered to be good if and only if all parentheses in S
+    are balanced. For example: the string '(())()' is good, while the string
+    '())' is not.
+    Return 'Yes' if there's a way to make a good string, and return 'No' otherwise.
 
-def change_base(x: int, base: int):
-    """Change numerical base of input number x to base.
-    return string representation after the conversion.
-    base numbers are less than 10.
-    >>> change_base(8, 3)
-    '22'
-    >>> change_base(8, 2)
-    '1000'
-    >>> change_base(7, 2)
-    '111'
-    """
+    Examples:
+    match_parens(['()(', ')']) == 'Yes'
+    match_parens([')', ')']) == 'No'
+    '''

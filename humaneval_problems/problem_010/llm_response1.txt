@@ -1,3 +1,7 @@
-def incr_list(l: list):
-    """Return list with elements incremented by 1."""
-    return [x + 1 for x in l]
+def sort_third(l: list):
+    result = l.copy()
+    indices = [i for i in range(len(l)) if i % 3 == 0]
+    values = sorted([l[i] for i in indices])
+    for idx, val in zip(indices, values):
+        result[idx] = val
+    return result

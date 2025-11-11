@@ -1,3 +1,30 @@
-def incr_list(l: list):
-    """Return list with elements incremented by 1."""
-    return [x + 1 for x in l]
+```python
+def change_base(x: int, base: int):
+    """Change numerical base of input number x to base.
+    return string representation after the conversion.
+    base numbers are less than 10.
+    >>> change_base(8, 3)
+    '22'
+    >>> change_base(8, 2)
+    '1000'
+    >>> change_base(7, 2)
+    '111'
+    """
+    if x == 0:
+        return '0'
+    
+    if base < 2 or base > 9:
+        # Based on the problem description "base numbers are less than 10" and 
+        # the nature of base conversion, we assume 2 <= base <= 9.
+        # This part is defensive programming, though the constraints suggest it's not strictly necessary.
+        raise ValueError("Base must be between 2 and 9 inclusive.")
+
+    result = ''
+    n = x
+    while n > 0:
+        remainder = n % base
+        result = str(remainder) + result
+        n //= base
+        
+    return result
+```

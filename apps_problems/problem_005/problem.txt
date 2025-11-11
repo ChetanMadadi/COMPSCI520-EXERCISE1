@@ -1,0 +1,24 @@
+Problem: Generate Parentheses
+
+Given n pairs of parentheses, generate all combinations of well-formed parentheses.
+Return the number of valid combinations.
+
+Input Format:
+A single integer n (1 ≤ n ≤ 8)
+
+Output Format:
+An integer representing the count of valid parentheses combinations
+
+Example:
+Input:
+3
+
+Output:
+5
+
+Explanation: The valid combinations are:
+((()))
+(()())
+(())()
+()(())
+()()()

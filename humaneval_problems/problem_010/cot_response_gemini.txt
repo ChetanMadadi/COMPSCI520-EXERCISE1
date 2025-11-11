@@ -1,0 +1,13 @@
+def sort_third(l: list):
+    """Sort values at indices divisible by three."""
+    result = l.copy()
+    
+    # Extract values at indices divisible by 3
+    third_values = [l[i] for i in range(0, len(l), 3)]
+    third_values.sort()
+    
+    # Put sorted values back
+    for i, val in enumerate(third_values):
+        result[i * 3] = val
+    
+    return result

@@ -1,19 +1,20 @@
 """
-Task ID: HumanEval/134
-Entry Point: check_if_last_char_is_a_letter
+Task ID: HumanEval/61
+Entry Point: correct_bracketing
 """
 
 
-def check_if_last_char_is_a_letter(txt):
-    '''
-    Create a function that returns True if the last character
-    of a given string is an alphabetical character and is not
-    a part of a word, and False otherwise.
-    Note: "word" is a group of characters separated by space.
 
-    Examples:
-    check_if_last_char_is_a_letter("apple pie") ➞ False
-    check_if_last_char_is_a_letter("apple pi e") ➞ True
-    check_if_last_char_is_a_letter("apple pi e ") ➞ False
-    check_if_last_char_is_a_letter("") ➞ False 
-    '''
+def correct_bracketing(brackets: str):
+    """ brackets is a string of "(" and ")".
+    return True if every opening bracket has a corresponding closing bracket.
+
+    >>> correct_bracketing("(")
+    False
+    >>> correct_bracketing("()")
+    True
+    >>> correct_bracketing("(()())")
+    True
+    >>> correct_bracketing(")(()")
+    False
+    """

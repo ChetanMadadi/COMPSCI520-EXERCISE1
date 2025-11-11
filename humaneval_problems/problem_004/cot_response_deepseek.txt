@@ -1,0 +1,6 @@
+def count_distinct_characters(string: str) -> int:
+    """Count distinct characters regardless of case."""
+    seen = set()
+    for char in string:
+        seen.add(char.lower())
+    return len(seen)
